@@ -1,0 +1,15 @@
+# Railway 配置文件
+# 文档: https://docs.railway.app/
+
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "pnpm start"
+healthcheckPath = "/"
+healthcheckTimeout = 300
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
+
+[environments.production]
+NODE_ENV = "production"
